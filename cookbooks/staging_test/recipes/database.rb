@@ -1,17 +1,19 @@
-include_recipe "postgresql::client"
-include_recipe "postgresql::server"
+#include_recipe "postgresql::client"
+#include_recipe "postgresql::server"
 #include_recipe "database::postgresql"
 
-gem_package "pg"
+package["libpq-dev", "postgresql", "postgresql-contrib"]
 
-postgresql_connection_info = {
-    host:     node[:sahai][:database][:host],
-    port:     node[:sahai][:database][:port],
-    username: node[:postgresql][:username][:postgres],
-    password: node[:postgresql][:password][:postgres]
-}
+#gem_package "pg"
 
-postgresql_database_user node[:sahai][:database][:username] do
+#postgresql_connection_info = {
+#    host:     node[:sahai][:database][:host],
+#    port:     node[:sahai][:database][:port],
+#    username: node[:postgresql][:username][:postgres],
+#    password: node[:postgresql][:password][:postgres]
+#}
+
+#postgresql_database_user node[:sahai][:database][:username] do
   connection postgresql_connection_info
   password   node[:sahai][:database][:password]
   action     :create
