@@ -1,0 +1,40 @@
+{
+  "name": "staging_test",
+  "description": "Installs/Configures sahai-staging",
+  "long_description": "Installs/Configures sahai-staging",
+  "maintainer": "Shishir Joshi",
+  "maintainer_email": "shishir@c42.in",
+  "license": "All rights reserved",
+  "platforms": {
+  },
+  "dependencies": {
+    "apt": ">= 0.0.0",
+    "build-essential": ">= 0.0.0",
+    "git": ">= 0.0.0",
+    "users": ">= 0.0.0",
+    "ruby_build": ">= 0.0.0",
+    "nginx": ">= 0.0.0",
+    "database": ">= 0.0.0",
+    "postgresql": ">= 0.0.0",
+    "unicorn": ">= 0.0.0"
+  },
+  "recommendations": {
+  },
+  "suggestions": {
+  },
+  "conflicting": {
+  },
+  "providing": {
+  },
+  "replacing": {
+  },
+  "attributes": {
+  },
+  "groupings": {
+  },
+  "recipes": {
+  },
+  "version": "0.1.0",
+  "source_url": "",
+  "issues_url": ""
+}

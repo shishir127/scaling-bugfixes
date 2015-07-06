@@ -1,12 +1,11 @@
-user "deployer" do
-  home "/home/deployer"
-  password default[:sahai][:password]
+user "#{node[:sahai][:username]}" do
+  home "/home/#{node[:sahai][:username]}"
+  password node[:sahai][:password]
 end
 
 group 'sysadmin' do
   append                     false
-  excluded_members           Array
   gid                        2365
-  members                    ["deployer"]
+  members                    ["#{node[:sahai][:username]}"]
   action                     :create
 end
