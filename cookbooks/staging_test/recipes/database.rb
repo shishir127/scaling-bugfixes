@@ -14,20 +14,20 @@ package["libpq-dev", "postgresql", "postgresql-contrib"]
 #}
 
 #postgresql_database_user node[:sahai][:database][:username] do
-  connection postgresql_connection_info
-  password   node[:sahai][:database][:password]
-  action     :create
-end
+#   connection postgresql_connection_info
+#   password   node[:sahai][:database][:password]
+#   action     :create
+# end
 
-postgresql_database node[:sahai][:database][:dbname] do
-  connection postgresql_connection_info
-  provider   Chef::Provider::Database::Postgresql
-  action    :create
-end
+# postgresql_database node[:sahai][:database][:dbname] do
+#   connection postgresql_connection_info
+#   provider   Chef::Provider::Database::Postgresql
+#   action    :create
+# end
 
-postgresql_database_user node[:sahai][:database][:username] do
-  connection postgresql_connection_info
-  database_name node[:sahai][:database][:dbname]
-  privileges [:all]
-  action :grant
-end
+# postgresql_database_user node[:sahai][:database][:username] do
+#   connection postgresql_connection_info
+#   database_name node[:sahai][:database][:dbname]
+#   privileges [:all]
+#   action :grant
+# end
