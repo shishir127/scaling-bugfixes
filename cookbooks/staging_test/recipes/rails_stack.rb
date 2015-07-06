@@ -52,10 +52,6 @@ link "/usr/bin/ri" do
   to "/usr/local/ruby/bin/rdoc"
 end
 
-# execute 'debug' do
-#   command "echo 'installing bundler'"
-# end
-
 gem_package 'bundler' do
   options '--no-ri --no-rdoc'
 end
