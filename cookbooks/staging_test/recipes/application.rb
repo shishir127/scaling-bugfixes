@@ -1,6 +1,14 @@
 directory "#{node[:sahai][:project_home]}/shared" do
   group node[:sahai][:group]
-  owner node[:sahai][:user]
+  owner node[:sahai][:application]
+  mode 0755
+  action :create
+  recursive true
+end
+
+directory "#{node[:sahai][:project_home]}/releases" do
+  group node[:sahai][:group]
+  owner node[:sahai][:application]
   mode 0755
   action :create
   recursive true
@@ -8,7 +16,7 @@ end
 
 directory "#{node[:sahai][:project_home]}/shared/config" do
   group node[:sahai][:group]
-  owner node[:sahai][:user]
+  owner node[:sahai][:application]
   mode 0755
   action :create
   recursive true

@@ -16,8 +16,9 @@ default[:postgresql][:pg_hba]                     = [
 ]
 
 ## application attributes
-default[:sahai][:username]                               = 'deployer'
+default[:sahai][:username]                               = 'provisioner'
 default[:sahai][:password]                               = 'letterkay'
+default[:sahai][:application]                            = 'deploy'
 default[:sahai][:group]                                  = 'sysadmin'
 default[:sahai][:name]                                   = 'C42 Deployer'
 default[:sahai][:config]                                 = 'sahai.conf'
