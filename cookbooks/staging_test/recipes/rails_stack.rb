@@ -25,31 +25,7 @@ execute 'build ruby' do
 end
 
 link '/usr/bin/ruby' do
-  to '/usr/local/ruby/bin/ruby'
-end
-
-link "/usr/bin/gem" do
-  to "/usr/local/ruby/bin/gem"
-end
-
-link "/usr/bin/erb" do
-  to "/usr/local/ruby/bin/erb"
-end
-
-link "/usr/bin/irb" do
-  to "/usr/local/ruby/bin/irb"
-end
-
-link "/usr/bin/rake" do
-  to "/usr/local/ruby/bin/rake"
-end
-
-link "/usr/bin/rdoc" do
-  to "/usr/local/ruby/bin/rdoc"
-end
-
-link "/usr/bin/ri" do
-  to "/usr/local/ruby/bin/rdoc"
+  to '/usr/local/ruby'
 end
 
 gem_package 'bundler' do
