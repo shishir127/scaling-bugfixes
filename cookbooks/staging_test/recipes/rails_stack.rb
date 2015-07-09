@@ -21,11 +21,7 @@ package %w(libssl-dev build-essential bison openssl libreadline6 libreadline6-de
 
 execute 'build ruby' do
   action :run
-  command "ruby-build #{node[:sahai][:ruby][:version]} /usr/local/ruby"
-end
-
-link '/usr/bin/ruby' do
-  to '/usr/local/ruby'
+  command "ruby-build #{node[:sahai][:ruby][:version]} /usr/local/"
 end
 
 gem_package 'bundler' do
