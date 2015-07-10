@@ -1,6 +1,4 @@
 include_recipe "postgresql::client"
 include_recipe "postgresql::server"
 
-package["libpq-dev", "postgresql", "postgresql-contrib"]
-
-gem_package "pg"
+package ["libpq-dev", "postgresql", "postgresql-contrib"]

@@ -6,6 +6,7 @@ DEPENDENCIES
   nginx (~> 2.7.6)
   postgresql (~> 3.4.20)
   ruby_build
+  runit (~> 1.7.2)
   staging_test
     path: .
     metadata: true
