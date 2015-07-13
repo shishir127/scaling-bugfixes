@@ -1,14 +1,18 @@
 directory "/home/#{node[:sahai][:capistrano][:user]}/.ssh" do
-  mode 0755
-  action :Create
+  group node[:sahai][:group]
+  owner node[:sahai][:capistrano][:user]
+  mode 0700
+  action :create
 end
 
-file "/home/#{node[:sahai][:capistrano][:user]}/.ssh/authorized_keys" do
-  content node[:sahai][:capistrano][:key]
+template "/home/#{node[:sahai][:capistrano][:user]}/.ssh/authorized_keys" do
+  source  'authorized_keys'
   mode '0600'
   owner node[:sahai][:capistrano][:user]
   group node[:sahai][:group]
 end
+
+execute "ssh-keyscan -H github.com >> /home/deploy/.ssh/known_hosts"
 
 directory "#{node[:sahai][:project_home]}" do
   group node[:sahai][:group]
@@ -19,14 +23,6 @@ directory "#{node[:sahai][:project_home]}" do
 end
 
 directory "#{node[:sahai][:project_home]}/shared" do
-  group node[:sahai][:group]
-  owner node[:sahai][:capistrano][:user]
-  mode 0755
-  action :create
-  recursive true
-end
-
-directory "#{node[:sahai][:project_home]}/releases" do
   group node[:sahai][:group]
   owner node[:sahai][:capistrano][:user]
   mode 0755

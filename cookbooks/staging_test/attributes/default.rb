@@ -35,7 +35,6 @@ default[:sahai][:ruby][:version]                         = '2.2.0'
 default[:sahai][:web_server][:flag_editor_location]      = '/tmp/nginx_build_flag_editor.rb'
 default[:sahai][:web_server][:build_scipt_location]      = '/tmp/nginx_tcp_proxy_setup.sh'
 default[:sahai][:capistrano][:user]                      = 'deploy'
-default[:sahai][:capistrano][:key]                       = 'ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZquFEB9FZJSMbmpe1htgr9BgBezVwnIHoQn02vemTQtuTYfYOoou4alkQ7thdCCilPC0vinSjMYrDPP0Viw02l/UyBvuQoc4/eoAVUQbmh/gxMB+2FF5LQPffkuRm3xBqbebQB+tneBCy1fLM1TWnuTXzyYAuWZMNDNjTyC2OZDCsPaSJjZGPgsurQ6ukSjLSjRiVJ1A8zifWLGHHdX9HC15Gy2ZNntUrhiKwctPqG606Qyx6AkmGoTWqRbqZ0bpVWU4aEfYZyJS3tRJGwuQk5f6vhBteXwujU+YjdLQEnYTcT0812nNVDw+e85OQ9CJokKYzbFphShgxjZZ2lYs1 /Users/shishir/.ssh/id_rsa'
 default[:sahai][:capistrano][:repo]                      = 'git@github.com:c42/sahai-web.git'
 
 #unicorn
