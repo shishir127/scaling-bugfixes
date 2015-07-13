@@ -12,7 +12,9 @@ template "/home/#{node[:sahai][:capistrano][:user]}/.ssh/authorized_keys" do
   group node[:sahai][:group]
 end
 
-execute "ssh-keyscan -H github.com >> /home/deploy/.ssh/known_hosts"
+execute "ssh-keyscan -H github.com >> ~/.ssh/known_hosts" do
+  user node[:sahai][:capistrano][:user]
+end
 
 directory "#{node[:sahai][:project_home]}" do
   group node[:sahai][:group]
