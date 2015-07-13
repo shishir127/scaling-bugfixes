@@ -1,1 +1,2 @@
 nodes
+cookbooks/staging_test/templates/default/authorized_keys
