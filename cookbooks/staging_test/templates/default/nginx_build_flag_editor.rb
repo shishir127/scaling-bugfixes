@@ -3,7 +3,7 @@ config_file = File.open("/opt/rebuildnginx/nginx-1.8.0/debian/rules", "r")
 tempfile = File.open("/tmp/file.txt", "w")
 config_file.each_line do |line|
   tempfile<<line
-  if line.downcase=~Regexp.new("common_configure_flags :=")
+  if line.downcase=~Regexp.new("full_configure_flags :=")
     tempfile << extra_flags
   end
 end
