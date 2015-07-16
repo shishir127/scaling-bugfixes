@@ -45,3 +45,14 @@ default[:unicorn][:before_fork] = 'sleep 1'
 default[:unicorn][:port] = '8080'
 default[:unicorn][:config_file] = "#{node[:sahai][:project_home]}/config/unicorn.rb"
 default[:unicorn][:options] = { :tcp_nodelay => true, :backlog => 100 }
+
+#newrelic plugin for aws
+default[:newrelic][:license_key] = "THIS NEEDS TO BE ENTERED"
+default[:newrelic][:aws_cloudwatch][:install_path] = "/var/www/newrelic_plugin"
+default[:newrelic][:aws_cloudwatch][:user] = node[:sahai][:capistrano][:user]
+default[:newrelic][:aws_cloudwatch][:aws_access_key] = "THIS NEEDS TO BE ENTERED"
+default[:newrelic][:aws_cloudwatch][:aws_secret_key] = "THIS NEEDS TO BE ENTERED"
+default[:newrelic][:aws_cloudwatch][:agents] = ["ec2", "sqs", "rds"]
+default[:newrelic][:aws_cloudwatch][:version] = "3.3.2"
+default[:newrelic][:aws_cloudwatch][:download_url] = "https://github.com/newrelic-platform/newrelic_aws_cloudwatch_plugin/archive/#{node[:newrelic][:aws_cloudwatch][:version]}.tar.gz"
+default[:newrelic][:aws_cloudwatch][:plugin_path]  = "#{node[:newrelic][:aws_cloudwatch][:install_path]}/newrelic_aws_cloudwatch_plugin"
