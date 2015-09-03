@@ -36,6 +36,7 @@ default[:sahai][:web_server][:flag_editor_location]      = '/tmp/nginx_build_fla
 default[:sahai][:web_server][:build_scipt_location]      = '/tmp/nginx_tcp_proxy_setup.sh'
 default[:sahai][:capistrano][:user]                      = 'deploy'
 default[:sahai][:capistrano][:repo]                      = 'git@github.com:c42/sahai-web.git'
+default[:sahai][:tcp_server][:project_home]              = '/var/www/sahai-tcp'
 
 #unicorn
 default[:unicorn][:worker_timeout] = 60

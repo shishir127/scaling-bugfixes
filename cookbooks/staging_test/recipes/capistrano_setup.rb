@@ -40,6 +40,30 @@ directory "#{node[:sahai][:project_home]}/shared/config" do
   recursive true
 end
 
+directory "#{node[:sahai][:tcp_server][:project_home]}" do
+  group node[:sahai][:group]
+  owner node[:sahai][:capistrano][:user]
+  mode 0755
+  action :create
+  recursive true
+end
+
+directory "#{node[:sahai][:tcp_server][:project_home]}/shared" do
+  group node[:sahai][:group]
+  owner node[:sahai][:capistrano][:user]
+  mode 0755
+  action :create
+  recursive true
+end
+
+directory "#{node[:sahai][:tcp_server][:project_home]}/shared/config" do
+  group node[:sahai][:group]
+  owner node[:sahai][:capistrano][:user]
+  mode 0755
+  action :create
+  recursive true
+end
+
 template "#{node[:sahai][:project_home]}/shared/config/database.yml" do
   source 'database.yml.erb'
 end
